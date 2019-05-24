@@ -1827,6 +1827,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6423,7 +6439,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "th[data-v-7f690d44] {\n  padding-right: 40px;\n}", ""]);
+exports.push([module.i, ".main[data-v-7f690d44] {\n  width: 100%;\n  height: 100%;\n  padding: 20px;\n}\n.content-lefth[data-v-7f690d44] {\n  height: 100%;\n  width: 50%;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  left: 0;\n  overflow-x: hidden;\n  padding: 20px;\n}\n.content-rigth[data-v-7f690d44] {\n  margin-left: 50%;\n  height: 100%;\n  padding: 20px;\n}", ""]);
 
 // exports
 
@@ -38032,132 +38048,152 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _vm._l(_vm.list, function(item) {
-        return _c("tr", [
-          _c("td", [_vm._v(_vm._s(item.gold))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(item.kg))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(item.attribuil))]),
-          _vm._v(" "),
-          _c("td", [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: item.amount,
-                  expression: "item.amount"
-                }
-              ],
-              attrs: { type: "text", id: "minput" },
-              domProps: { value: item.amount },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.$set(item, "amount", $event.target.value)
-                }
-              }
-            })
-          ]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
-              _c(
-                "Button",
-                {
+  return _c("div", { staticClass: "main" }, [
+    _c("div", { staticClass: "content-lefth" }, [
+      _c("table", { staticClass: "table table-bordered" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.list, function(item, index) {
+            return _c("tr", [
+              _c("td", [_vm._v(_vm._s(index))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(item.gold))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(item.kg))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(item.attribuil))]),
+              _vm._v(" "),
+              _c("td", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: item.amount,
+                      expression: "item.amount"
+                    }
+                  ],
+                  attrs: { type: "text", id: "minput" },
+                  domProps: { value: item.amount },
                   on: {
-                    click: function($event) {
-                      return _vm.getList(item)
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(item, "amount", $event.target.value)
                     }
                   }
-                },
-                [_vm._v("select")]
-              )
-            ],
-            1
-          )
-        ])
-      }),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _vm._m(1),
-      _vm._v(" "),
-      _vm._l(_vm.listitem, function(item, index) {
-        return _c("tr", [
-          _c("td", [_vm._v(_vm._s(item.golds))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(item.kgs))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(item.attribuils))]),
-          _vm._v(" "),
-          _c("td", [_vm._v(_vm._s(item.a))]),
-          _vm._v(" "),
-          _c(
-            "td",
-            [
+                })
+              ]),
+              _vm._v(" "),
               _c(
-                "Button",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.removeList(index)
-                    }
-                  }
-                },
-                [_vm._v("delete")]
+                "td",
+                [
+                  _c(
+                    "Button",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.getList(item)
+                        }
+                      }
+                    },
+                    [_vm._v("select")]
+                  )
+                ],
+                1
               )
-            ],
-            1
-          )
-        ])
-      })
-    ],
-    2
-  )
+            ])
+          }),
+          0
+        )
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "content-rigth" }, [
+      _c("table", { staticClass: "table table-borderless" }, [
+        _vm._m(1),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.listitem, function(item, index) {
+            return _c("tr", [
+              _c("td", [_vm._v(_vm._s(index))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(item.golds))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(item.kgs))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(item.attribuils))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(item.a))]),
+              _vm._v(" "),
+              _c(
+                "td",
+                [
+                  _c(
+                    "Button",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.removeList(index)
+                        }
+                      }
+                    },
+                    [_vm._v("delete")]
+                  )
+                ],
+                1
+              )
+            ])
+          }),
+          0
+        )
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("ชนิดทอง")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("น้ำหนักทอง")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("ลักษณะทอง")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("จำนวนที่ขอเบิก")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("เลือก")])
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("#")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("ชนิดทอง")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("น้ำหนักทอง")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("ลักษณะทอง")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("จำนวนที่ขอเบิก")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("เลือก")])
+      ])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("ชนิดทอง")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("น้ำหนักทอง")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("ลักษณะทอง")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("จำนวนที่ขอเบิก")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("เลือก")])
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("#")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("ชนิดทอง")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("น้ำหนักทอง")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("ลักษณะทอง")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("จำนวนที่ขอเบิก")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("เลือก")])
+      ])
     ])
   }
 ]
@@ -53466,9 +53502,6 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
   mode: 'history',
   routes: [{
     path: '/',
-    component: _components_Home__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }, {
-    path: '/content',
     component: _components_Content__WEBPACK_IMPORTED_MODULE_3__["default"]
   }]
 }));

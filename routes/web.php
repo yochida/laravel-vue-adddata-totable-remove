@@ -15,6 +15,10 @@
 //     return view('welcome');
 // });
 
+// Route::get('/test', function () {
+//     return view('test');
+// });
+
 Route::any('{all}', function () {
     return view('welcome');
 })->where(['all' => '.*']);
